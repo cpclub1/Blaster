@@ -214,6 +214,8 @@ void ABlasterCharacter::AimOffset(float DeltaTime)
 		FVector2d InRange(270.f, 360.f);
 		FVector2d OutRange(-90.f, 0.f);
 		AO_Pitch = FMath::GetMappedRangeValueClamped(InRange,OutRange,AO_Pitch);
+		
+		//AO_Pitch = GetBaseAimRotation().GetNormalized().Pitch;  //  This is a better solution.
 	}
 
 	
